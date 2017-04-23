@@ -2,7 +2,7 @@
 
 <?php get_header();  ?>
 
-<div class="wrappAll">
+
 
 <?php
 if ( have_posts() ) :
@@ -18,10 +18,6 @@ else :
 endif;
 
 ?> 
-
-</div>
-
- <?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
 

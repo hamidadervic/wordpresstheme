@@ -1,5 +1,6 @@
 
 <aside class="sidebar">
+  <div class="content"> 
    <?php if ( is_active_sidebar("sidebar1") )  {
      dynamic_sidebar("sidebar1"); 
    } else {
@@ -7,7 +8,8 @@
    }
 
    ?>
+  </div>
 
-</aside>
+ </aside>
 
 

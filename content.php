@@ -1,5 +1,6 @@
 <article class="post has-thumbnail" >
 
+   <div class="inside-article">
          <a href="<?php the_permalink(); ?>">
              <h2 class="<?php if( has_post_thumbnail() && !is_single() ) { ?> PHasThumbnail <?php } ?>" > <?php if( !is_single() ) { echo max_title(get_the_title()); } else { the_title();} ?> 
              </h2> 
@@ -28,6 +29,11 @@
 
 	    </p> 
 
+     </div>
+
+
+      <div class="<?php if( !is_single() ) { ?> inside-article <?php } ?>">
+
 	    <div class=" <?php if( !is_single() ) { ?> feauturedImg <?php } ?> ">
 
 	       <a href="<?php the_permalink(); ?>">
@@ -42,6 +48,10 @@
            </a>
            
 	    </div>
+
+	  </div>
+
+	 <div class="inside-article">
        
        <a href="<?php the_permalink(); ?>">
 
@@ -64,5 +74,5 @@
 
 		</a>
 
-
-    </article>
+      </div>
+  </article>

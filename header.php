@@ -8,13 +8,7 @@
    </head>
 <body <?php body_class();  ?>>
 
-<div class="container">
-
-     <header class="site-header">
-     	 <h1> <a href="<?php echo home_url(); ?>"> <?php bloginfo('name'); ?> </a>  </h1>
-     	 <h5> <?php bloginfo('description'); ?> </h5>
-
-        <!-- navigation menu  
+ <!-- navigation menu  
         <nav class="site-nav">
             <?php 
 
@@ -25,6 +19,9 @@
 
             <?php wp_nav_menu( $args ); ?>
          </nav> -->
+        <div id="menu" >
+               <img  src="<?php echo get_template_directory_uri(); ?>/images/menu.png" />
+         </div>
 
          <nav class="site-nav">
             <?php 
@@ -36,4 +33,11 @@
 
             <?php wp_nav_menu( $args ); ?>
          </nav>
-</header>
+
+<div class="container">
+
+
+     <header class="site-header">
+     	 <h1> <a href="<?php echo home_url(); ?>"> <?php bloginfo('name');?>  <?php bloginfo('description'); ?>   </a>  </h1> 
+         <hr/>
+     </header>
