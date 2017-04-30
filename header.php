@@ -8,17 +8,6 @@
    </head>
 <body <?php body_class();  ?>>
 
- <!-- navigation menu  
-        <nav class="site-nav">
-            <?php 
-
-            $args = array(
-                'theme_location' => "primary"
-                );
-            ?>
-
-            <?php wp_nav_menu( $args ); ?>
-         </nav> -->
         <div id="menu" >
                <img  src="<?php echo get_template_directory_uri(); ?>/images/menu.png" />
          </div>

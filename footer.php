@@ -1,7 +1,6 @@
 
 
 <!--end container -->
-</div>
 
 
 
@@ -32,9 +31,9 @@
           <?php dynamic_sidebar("footer3"); ?>
      </div>
      <?php } ?>
-
  </footer>
 
+</div>
 <?php wp_footer(); ?>
 
 </body>

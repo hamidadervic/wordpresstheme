@@ -32,13 +32,13 @@
      </div>
 
 
-      <div class="<?php if( !is_single() ) { ?> inside-article <?php } ?>">
+      <div class="<?php if(  !is_single()  && !is_page()  ) { ?> inside-article <?php } ?>">
 
-	    <div class=" <?php if( !is_single() ) { ?> feauturedImg <?php } ?> ">
+	    <div class=" <?php if( !is_single() && !is_page()  ) { ?> feauturedImg <?php } ?> ">
 
 	       <a href="<?php the_permalink(); ?>">
 
-           <?php if( is_single() ) {
+           <?php if( is_single() )  {
                      the_post_thumbnail("banner_image");
                   } else {
                   	 the_post_thumbnail("small_thumbnail");
@@ -52,13 +52,11 @@
 	  </div>
 
 	 <div class="inside-article">
-       
-       <a href="<?php the_permalink(); ?>">
 
 		<p class=" <?php if( has_post_thumbnail()  ) { ?> PHasThumbnail <?php } ?>
-		           <?php if(!is_single()){?> withoutText <?php } ?>"> 
+		           <?php if(!is_single() && !is_page() ){?> withoutText <?php } ?>"> 
 
-		<?php if( is_single() ) {
+		<?php if( is_single() || is_page() ) {
 
 			    the_content();
 
@@ -71,8 +69,6 @@
 		<?php 	} ?> 
 		
 		</p>
-
-		</a>
 
       </div>
   </article>
