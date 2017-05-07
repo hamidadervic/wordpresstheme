@@ -2,7 +2,7 @@ jQuery(document).ready(function( $ ) {
 
 	
 	/* toggle navigation for tablets and phones */
-	$("#menu").click(function (){
+	$("#menu").on('click touchstart', function (){
 		$(".site-nav").toggle("slow");
 	});
 
@@ -18,10 +18,11 @@ jQuery(document).ready(function( $ ) {
    	        $margin-=100;
 
    	           if($margin === -400){
-   	           	  $margin = -0;
+   	           	  $margin = 0;
    	           }
    	 }
 
    	 setInterval(slider_function,3000);
-   });
+
+});
 	

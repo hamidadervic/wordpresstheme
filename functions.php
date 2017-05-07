@@ -2,33 +2,30 @@
 
 <?php
 
-/* get stylesheets */
-
-function styleFunc(){
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
-}
-
-add_action('wp_enqueue_scripts','styleFunc');
 
 
-/* get js file */
+/* get jaavascript and css */
 
 function wpmu_load_scripts() {
 
-  wp_enqueue_script( 'script', get_stylesheet_directory_uri() . '/js/script.js' , array( 'jquery' ) );
+  wp_enqueue_style( 'style', get_stylesheet_uri() );
+  wp_enqueue_script( 'script', get_template_directory_uri() . '/js/script.js', array( 'jquery' ) );
 
 }
+
 add_action( 'wp_enqueue_scripts', 'wpmu_load_scripts' );
 
 /*theme setup*/
 
 function HD_Baby_Theme_setup(){
+
 	/* register navigation menus */
     register_nav_menus(array(
         "primary" => __("Primary Menu"),
         "category" => __("Category Menu")
-	));
-     /* Add support futured image */
+	  ));
+
+     /* Add support feautured image */
      add_theme_support("post-thumbnails");
      add_theme_support("post-formats",array("link","quote","aside"));
      add_image_size("small_thumbnail", 150, 100, true);
@@ -64,8 +61,8 @@ function my_widgets(){
 
 add_action("widgets_init","my_widgets");
 
-/* set maximum title characters */
 
+/* set maximum title characters */
 function max_title( $title ){
     if( strlen( $title ) > 57){
         return substr( $title, 0, 57)."...";
@@ -74,10 +71,10 @@ function max_title( $title ){
     }
 }
 
-/*the excerpt on frontpage */
 
+/* customize the excerpt */
 function excerpt_function(){
-   return 30;
+   return 20;
 }
 
 add_action("excerpt_length","excerpt_function");
@@ -86,15 +83,23 @@ add_action("excerpt_length","excerpt_function");
 /* customize function */
 
 
+$defaults = array(
+   'width' => 100,
+   'default-color' => '#f2f2f2',
+   'default-image' => get_template_directory_uri() . '/images/menu.png'
+);
+add_theme_support( 'custom-background', $defaults );
+
+
 function customize( $wp_customize ){
      
-     /* link settings */
+     /* link settings - color*/
      $wp_customize->add_setting('setting_link_color', array(
            'default' => '#084C61',
            'transport' => 'refresh',
       ));
     
-      /* navigation settings */
+      /* navigation settings, button and footer - background color */
      $wp_customize->add_setting('setting_nav_color', array(
            'default' => '#0047b3',
            'transport' => 'refresh',
@@ -132,6 +137,7 @@ function customize( $wp_customize ){
            'settings' => 'setting_nav_hover_color',
     ) ) ); 
 
+
 }
 
 add_action("customize_register", "customize");
@@ -148,14 +154,22 @@ function customize_css(){ ?>
             color: <?php  echo get_theme_mod('setting_link_color'); ?> ;
           }
          
-          /* customize the background color of the navigation menu and wdgets */
+          /* customize the background color of the navigation menu, buttons and wdgets */
           .site-nav,
+          #menu,
+          div.search-results,
           h2.widgettitle,
+          #title-slider button,
           #wp-calendar caption {
             background-color: <?php echo get_theme_mod('setting_nav_color'); ?> ;
           }
+
+          input.search-field{
+            border-bottom: 3px solid <?php echo get_theme_mod('setting_nav_color'); ?>;
+          }
            
           /* what about hover */
+          #title-slider button:hover,
           nav.site-nav  ul li:hover,
           nav.site-nav ul li.current-menu-item  {
                background-color: <?php echo get_theme_mod('setting_nav_hover_color'); ?> ;
@@ -164,7 +178,7 @@ function customize_css(){ ?>
            /*customize the hr tag */
            header.site-header hr {
                border-top: 5px double <?php echo get_theme_mod('setting_nav_color'); ?>;
-           }    
+           }   
 
       </style>
 

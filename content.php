@@ -1,12 +1,24 @@
 <article class="post has-thumbnail" >
 
+<a href="<?php the_permalink(); ?>">
+
+           <div class="<?php if( !is_single() ) { ?> inside-my-cat <?php } ?>"> 
+                   <?php  the_post_thumbnail("banner_image"); ?>
+           </div> 
+
+       </a>
+
+
    <div class="inside-article">
          <a href="<?php the_permalink(); ?>">
              <h2 class="<?php if( has_post_thumbnail() && !is_single() ) { ?> PHasThumbnail <?php } ?>" > <?php if( !is_single() ) { echo max_title(get_the_title()); } else { the_title();} ?> 
              </h2> 
          </a>
 
-         <p class="post-info  <?php if( has_post_thumbnail() && !is_single() ) { ?> PHasThumbnail <?php } ?>">  
+   
+      <!-- if is single post, show these details... -->
+      <?php if (is_single() ) : ?>
+         <p class="post-info  <?php if( has_post_thumbnail() ) { ?> PHasThumbnail <?php } ?>">  
 
 		  Published on <?php the_time("F jS, Y");?>
 		  by  <?php the_author_posts_link(); ?>
@@ -29,30 +41,8 @@
 
 	    </p> 
 
-     </div>
-
-
-      <div class="<?php if(  !is_single()  && !is_page()  ) { ?> inside-article <?php } ?>">
-
-	    <div class=" <?php if( !is_single() && !is_page()  ) { ?> feauturedImg <?php } ?> ">
-
-	       <a href="<?php the_permalink(); ?>">
-
-           <?php if( is_single() )  {
-                     the_post_thumbnail("banner_image");
-                  } else {
-                  	 the_post_thumbnail("small_thumbnail");
-                  }
-           ?>
-
-           </a>
-           
-	    </div>
-
-	  </div>
-
-	 <div class="inside-article">
-
+       <?php endif; ?>
+        
 		<p class=" <?php if( has_post_thumbnail()  ) { ?> PHasThumbnail <?php } ?>
 		           <?php if(!is_single() && !is_page() ){?> withoutText <?php } ?>"> 
 
@@ -71,4 +61,4 @@
 		</p>
 
       </div>
-  </article>
+ </article>

@@ -11,12 +11,18 @@ Version: 1.0;
 body {
 	padding: 0;
 	margin: 0;
-	background:  #f2f2f2;
+    background:  #f2f2f2; 
 	font-family: 'Open Sans', sans-serif;
 }
 
+/*edit the video-container */
+
+iframe{
+   width: 100% !important;
+}
+
 /* Container div*/
-div.container{
+div.container {
     margin: 5% auto;
 	position: relative;
 	max-width: 1000px;
@@ -35,18 +41,18 @@ a:visited {
 }
 
 /* wrapping the posts, before sidebar */
-.wrappAll{
+.wrappAll {
 	width: 670px;
 	min-height: 600px;
 }
 
-img{
+img {
 	height:auto;
 	max-width: 100%;
 }
 
 /* article post */
-article.post{
+article.post { 
 	margin-top: 20px;
 	box-shadow: 1px 1px 1px silver;
 	width: 100%;
@@ -54,7 +60,7 @@ article.post{
 	border-bottom: 1px solid #cccccc;
 }
 
-article.post h2{
+article.post h2 {
 	padding-top: 20px;
 	margin-bottom: 0;
 }
@@ -65,7 +71,7 @@ article.post p {
 }
 
 
-article.post img{
+article.post img {
 	width: 100%;
 }
 
@@ -75,42 +81,42 @@ article.post img{
 }
 /*content-aside.php*/
 
-.post-aside{
+.post-aside {
 	background: #e6e6ff;
 }
 
 /* content-quote.php */
-.post-quote{
+.post-quote {
 	background-color:  #ffffe6;
 }
 
 
 p.PHasThumbnail {
-	margin-top: 0px;
+	margin-top: 20px;
 }
 
-p.withoutText{
-    min-height: 130px;
+p.withoutText {
+    min-height: 50px;
 }
 
 
-.has-thumbnail{
+.has-thumbnail {
 	position: relative;
 }
 
 
-.feauturedImg{
+.feauturedImg {
 	margin-right: 10px;
 	width: 180px;
 	max-height: 130px;
-	left: 0;
+	margin-left: 20px;
 	top: 0;
 	float: left;
 	overflow: hidden;
 }
 
 
-p.post-info{
+p.post-info {
  min-height: 30px !important;
  text-align: left !important;
  opacity: 0.4;
@@ -122,15 +128,15 @@ p.post-info{
 
 /*header */
 
-header.site-header{
+header.site-header {
 	text-align: center;
 }
 
-header.site-header h1{
+header.site-header h1 {
 	padding-top: 20px;
 }
 
- header.site-header hr { 
+header.site-header hr { 
   border: 0;
   border-top: 5px double #167ac6;
 }
@@ -191,18 +197,19 @@ footer.site-footer{
 	text-align: center;
 }
 
-.copyright-site{
+p.copyright-site{
 	font-size: 13px;
 }
 
 /* footer widgets */
 
 .footer-widget{
-	color: #084C61;;
+	margin-top: 0;
+	margin-left: 3%;
 	width: 30%;
 	min-height: 30px;
 	float:left;
-	margin-left: 3%;
+	color: #084C61;;
 }
 
 .footer-widget li{
@@ -218,7 +225,7 @@ footer.site-footer{
 /* widgets */ 
 
 
-h2.widgettitle{
+h2.widgettitle {
 	background: #0047b3;;
 	color: #fff;
 	font-size: 18px;
@@ -226,21 +233,17 @@ h2.widgettitle{
 }
 
 
-.widget li{
+.widget li {
    text-align: left !important;
    margin-left: -40px;
    list-style-type: none;
    padding-top: 10px;
 }
 
-.widget li:hover{
-	background: #e6e6ff;
-}
 
 .widget li:before {
-    content: "•"; /* Insert content that looks like bullets */
+    content: "•"; 
     padding-right: 8px;
-    color: blue; /* Or a color you prefer */
 }
 
 .widget_calendar table {
@@ -271,7 +274,7 @@ aside.sidebar{
 	position: absolute;
 	top: 98px;
 	right: 2%;
-	width: 300px;
+	width: 315px;
 }
 
 
@@ -297,7 +300,7 @@ aside.sidebar label span.screen-reader-text {
 	vertical-align: top;
 }
 
-.search-field{
+input.search-field {
 	padding: 0.1em 0.25em;
 	width: 100%;
 	background: transparent;
@@ -311,11 +314,11 @@ aside.sidebar label span.screen-reader-text {
 
 /*archive-php */
 
-.site-archive{
+.site-archive {
 	opacity: 0.3;
 }
 
-.site-archive:hover{
+.site-archive:hover {
 	opacity: 1;
 }
 
@@ -356,7 +359,7 @@ div.search-results h2{
 }
 #image-slider{
 	width: 100%;
-	height: 250px;
+	max-height: 250px;
 	overflow: hidden;
 }
 
@@ -371,7 +374,6 @@ div.search-results h2{
 	background: #167ac6;
 	cursor: pointer;
 	color: white;
-	border-color: #167ac6;
 }
 
 #title-slider button:hover{
@@ -383,7 +385,17 @@ div.search-results h2{
 #front-page-my-category{
 	margin-top: 20px;
 	overflow: auto;
-	background: pink;
+	background: transparent;
+}
+
+
+.front-page-article{
+	width: 100%; 
+	height: auto; 
+	margin-top: 20px; 
+	background: white;
+	border-bottom: 1px solid #cccccc;
+	box-shadow: 1px 1px 1px silver;
 }
 
 .my-category {
@@ -391,12 +403,13 @@ div.search-results h2{
 	display: inline-block;
 	width: 48%;
 	float: left;
-	box-shadow: 1px 1px 1px silver;
-	background:  white;
-	border-bottom: 1px solid #cccccc;
 }
 
-
+.inside-my-cat{
+	width: 100%; 
+	height: 130px; 
+	overflow: hidden;
+}
 
 /* For tablets */
 
@@ -484,4 +497,9 @@ div.search-results h2{
     #title-slider p {
     	font-size: 14px;
     }
+
+    .my-category {
+    	width: 100%;
+    	margin: 0;
+     }
 }

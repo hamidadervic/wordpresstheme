@@ -2,6 +2,8 @@
 
 <?php get_header();  ?>
 
+
+
 <div class="wrappAll">
 
 <?php
@@ -11,6 +13,8 @@ if ( have_posts() ) :
     get_template_part("content",get_post_format());
     	
 endwhile;
+
+echo paginate_links();
 
 else :
 	echo wpautop( 'Sorry, no posts were found' );

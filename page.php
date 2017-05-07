@@ -14,6 +14,7 @@ if ( have_posts() ) :
 
 endwhile;
 
+
 else :
 	echo wpautop( 'Sorry, no pages were found' );
 

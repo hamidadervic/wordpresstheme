@@ -1,6 +1,5 @@
 
 
-
 <?php get_header();  ?>
 
 
@@ -16,13 +15,13 @@ if ( have_posts() ) :
    	       <div id="main-slider">
    	         <div id="post-slider">
                   <?php
-                         $cat1 = NEW WP_Query("cat=21&posts_per_page=4");
+                         $cat1 = NEW WP_Query("cat=1&posts_per_page=4");
                          if ( $cat1->have_posts() ) :
 	                            while ( $cat1->have_posts() ) : $cat1->the_post();?>
 
                                  <div class="post-inside-slider">
                                       <div id="image-slider">
-                                       <?php the_post_thumbnail("banner_image") ?> 
+                                       <?php the_post_thumbnail("banner_image"); ?> 
                                       </div>
                                   <div class="inside-article">
                                       <div id="title-slider">
@@ -56,30 +55,71 @@ if ( have_posts() ) :
 
 <div id="front-page-my-category"> 
    <div class="my-category">
-        <div class="inside-article">
              <?php 
-                   $cat2 = NEW WP_Query("cat=21&posts_per_page=4");
-                   if( $cat2->have_posts () ) : 
-                   	    while ( $cat2->have_posts() ) : $cat2->the_post();
+                   $cat2 = NEW WP_Query("cat=16&posts_per_page=4");
 
-                   	    the_post_thumbnail("small_thumbnail");
+                        if( $cat2->have_posts () ) : 
 
-                   	    endwhile;
+                   	           while ( $cat2->have_posts() ) : $cat2->the_post(); ?>
+                          
+                   	          <div class="front-page-article">
+
+                                        <a href="<?php the_permalink(); ?>">
+                                                  <div class="inside-my-cat"> 
+                                                            <?php  the_post_thumbnail("banner_image"); ?>
+                                                  </div> 
+
+                                                 <div class="inside-article"> 
+                                                        <h4>  
+                                                            <?php echo max_title(get_the_title()); ?>
+                                                        </h4>
+                                         </a>
+
+                   	                                <?php  the_excerpt(); ?>
+                 	          
+                   	                                </div> 
+                   	                                </div>
+                   	          <?php endwhile;
 
                    	    else : 
                    	      echo "Sorry, no posts were found." ;
 
                    	    endif;
-             ?>
-         </div>
+               ?>
    </div>
 
    <div class="my-category">
-        <div class="inside-article">
-             hiEs verbreitet sein Gift durch den Kontakt und zirkuliert durch das ganze Menschliche System unter einer Minute. Man sollte ihn auf keinen Fall mit bloßen Händen berühren .Seit einem Jahr haben die Notdienste über 1000 Menschen behandelt. Mehr als 100 Menschen sind an diesem Virus “ India Contra Virus “ schon gestorben. Zeigen sie jedem diese Bilder , vor allem kleinen Kinder, damit sie wissen ,dass sie nie in die Nähe von diesen gehen sollten.Es verbreitet sein Gift durch den Kontakt und zirkuliert durch das ganze Menschliche System unter einer Minute. Man sollte ihn auf keinen Fall mit bloßen Händen berühren .Seit einem Jahr haben die Notdienste über 1000 Menschen behandelt. Mehr als 100 Menschen sind an diesem Virus “ India Contra Virus “ schon gestorben. Zeigen sie jedem diese Bilder , vor allem kleinen Kinder, damit sie wissen ,dass sie nie in die Nähe von diesen gehen sollten.
-         </div>
-   </div>
+        <?php 
+                   $cat2 = NEW WP_Query("cat=17&posts_per_page=4");
+
+                        if( $cat2->have_posts () ) : 
+
+                   	           while ( $cat2->have_posts() ) : $cat2->the_post(); ?>
+                   	                      <div class="front-page-article">
+                                                  <a href="<?php the_permalink(); ?>">
+                                                           <div class="inside-my-cat"> 
+                                                                     <?php  the_post_thumbnail("banner_image"); ?>
+                                                           </div> 
+
+                                                          <div class="inside-article"> 
+                                                                 <h4>  
+                                                                     <?php echo max_title(get_the_title()); ?>
+                                                                 </h4>
+                                                   </a>
+                   	                                   <?php  the_excerpt(); ?>
+
+                   	          
+                   	                       </div> 
+                   	          </div>
+                   	          <?php endwhile;
+
+                   	    else : 
+                   	      echo "Sorry, no posts were found." ;
+
+                   	    endif;
+               ?>
 </div>  	  
+</div>
 
 <?php  } else {
   	get_template_part("content");

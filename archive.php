@@ -47,6 +47,8 @@ if ( have_posts() ) : ?>
      	
       endwhile;
 
+      echo paginate_links();
+
 else :
 	echo wpautop( 'Sorry, no posts were found' );
 
