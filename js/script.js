@@ -2,27 +2,30 @@ jQuery(document).ready(function( $ ) {
 
 	
 	/* toggle navigation for tablets and phones */
-	$("#menu").on('click touchstart', function (){
+	$("#menu").on('click', function (){
 		$(".site-nav").toggle("slow");
 	});
 
-	/* next post in the slider */
-    $margin = -100;
+	/* slider function on the front-page */
+      (function () {
+         $margin = -100;
 
-   	 function slider_function(){
+           function slider_function(){
 
-   	    	$("#post-slider").animate({
-   	    		"margin-left": `${$margin}%`
-   	    	});
+   	    	     $("#post-slider").animate({
+   	    		     "margin-left": `${$margin}%`
+   	    	     });
 
-   	        $margin-=100;
+   	             $margin-=100;
 
-   	           if($margin === -400){
-   	           	  $margin = 0;
-   	           }
-   	 }
+   	              if($margin === -400){
+   	           	     $margin = 0;
+   	              }
+   	      }
 
-   	 setInterval(slider_function,3000);
+         setInterval(slider_function,3000);
+         
+        })();
 
 });
 	

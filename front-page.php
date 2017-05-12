@@ -1,5 +1,4 @@
 
-
 <?php get_header();  ?>
 
 
@@ -56,7 +55,7 @@ if ( have_posts() ) :
 <div id="front-page-my-category"> 
    <div class="my-category">
              <?php 
-                   $cat2 = NEW WP_Query("cat=16&posts_per_page=4");
+                   $cat2 = NEW WP_Query("cat=2&posts_per_page=4");
 
                         if( $cat2->have_posts () ) : 
 
@@ -90,7 +89,7 @@ if ( have_posts() ) :
 
    <div class="my-category">
         <?php 
-                   $cat2 = NEW WP_Query("cat=17&posts_per_page=4");
+                   $cat2 = NEW WP_Query("cat=3&posts_per_page=4");
 
                         if( $cat2->have_posts () ) : 
 

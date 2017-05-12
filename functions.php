@@ -86,7 +86,7 @@ add_action("excerpt_length","excerpt_function");
 $defaults = array(
    'width' => 100,
    'default-color' => '#f2f2f2',
-   'default-image' => get_template_directory_uri() . '/images/menu.png'
+   'default-image' => get_template_directory_uri() . ''
 );
 add_theme_support( 'custom-background', $defaults );
 
